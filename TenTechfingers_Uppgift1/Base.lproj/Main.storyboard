@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TenTechfingers_Uppgift1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wz-Qi-DSy">
+                                <rect key="frame" x="159.33333333333334" y="130" width="74.666666666666657" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OO9-TA-uev">
+                                <rect key="frame" x="36" y="221" width="320" height="216"/>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rpm-Yf-rar">
+                                <rect key="frame" x="78.333333333333329" y="467" width="236.33333333333337" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose manually" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbY-dN-Ss3">
+                                        <rect key="frame" x="0.0" y="0.0" width="157.33333333333334" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDB-bl-Ya2">
+                                        <rect key="frame" x="187.33333333333337" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="OnSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="SUR-Fn-CZd"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3ee-FF-7Mi" userLabel="StackToRoman">
+                                <rect key="frame" x="36.666666666666657" y="572" width="320" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x8m-I1-5Ca">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="I4K-27-Eb1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Roman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIs-Ld-fMs">
+                                        <rect key="frame" x="130" y="0.0" width="75.666666666666686" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LqK-ui-uFE">
+                                        <rect key="frame" x="235.66666666666666" y="0.0" width="84.333333333333343" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Convert"/>
+                                        <connections>
+                                            <action selector="OnRomanConvert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ity-sU-BZ6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Grg-cK-TCa" userLabel="StackToArabic">
+                                <rect key="frame" x="38.666666666666657" y="633" width="316" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKd-FN-RQI">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="MOT-pv-XzR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Arabic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smC-A0-dow">
+                                        <rect key="frame" x="130" y="0.0" width="71.666666666666686" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUR-yI-aHp">
+                                        <rect key="frame" x="231.66666666666666" y="0.0" width="84.333333333333343" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Convert"/>
+                                        <connections>
+                                            <action selector="OnArabicConvert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RID-gu-4rB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0wz-Qi-DSy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0dK-3h-X28"/>
+                            <constraint firstItem="rpm-Yf-rar" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="467" id="5vk-3Z-50G"/>
+                            <constraint firstItem="0wz-Qi-DSy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="Byo-kh-iLC"/>
+                            <constraint firstItem="rpm-Yf-rar" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Epa-j1-5CR"/>
+                            <constraint firstItem="Grg-cK-TCa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rcv-ai-EZK"/>
+                            <constraint firstItem="OO9-TA-uev" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T7G-LM-jW8"/>
+                            <constraint firstItem="rpm-Yf-rar" firstAttribute="top" secondItem="OO9-TA-uev" secondAttribute="bottom" constant="30" id="ejH-bu-fSl"/>
+                            <constraint firstItem="rpm-Yf-rar" firstAttribute="top" secondItem="OO9-TA-uev" secondAttribute="bottom" constant="30" id="fdK-lC-xEF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Grg-cK-TCa" secondAttribute="bottom" constant="151" id="ge1-bz-XxV"/>
+                            <constraint firstItem="3ee-FF-7Mi" firstAttribute="top" secondItem="rpm-Yf-rar" secondAttribute="bottom" constant="74" id="oY7-dU-arT"/>
+                            <constraint firstItem="Grg-cK-TCa" firstAttribute="top" secondItem="3ee-FF-7Mi" secondAttribute="bottom" constant="27" id="qq0-Qc-ceh"/>
+                            <constraint firstItem="OO9-TA-uev" firstAttribute="top" secondItem="0wz-Qi-DSy" secondAttribute="bottom" constant="70.670000000000002" id="vve-Rs-oSj"/>
+                            <constraint firstItem="3ee-FF-7Mi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zUM-KT-h7H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="StackArabic" destination="Grg-cK-TCa" id="BS1-Lc-wCu"/>
+                        <outlet property="StackRoman" destination="3ee-FF-7Mi" id="s2K-8M-hWs"/>
+                        <outlet property="btnConvertToArabic" destination="pUR-yI-aHp" id="ExX-SI-3Jh"/>
+                        <outlet property="btnConvertToRoman" destination="LqK-ui-uFE" id="6h8-wU-Oam"/>
+                        <outlet property="lblToArabic" destination="smC-A0-dow" id="jsd-rs-cKA"/>
+                        <outlet property="lblToRoman" destination="sIs-Ld-fMs" id="ekB-WY-ti6"/>
+                        <outlet property="myPickerView" destination="OO9-TA-uev" id="dGo-bf-gyZ"/>
+                        <outlet property="mySwitch" destination="pDB-bl-Ya2" id="K0Q-Ap-YGg"/>
+                        <outlet property="txtFieldArabicNum" destination="x8m-I1-5Ca" id="9VB-Os-y45"/>
+                        <outlet property="txtFieldRomanNum" destination="vKd-FN-RQI" id="Ec2-2g-DZ9"/>
+                        <outlet property="txtLoading" destination="0wz-Qi-DSy" id="VQ2-zy-BnX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -17,6 +17,20 @@ class ViewController:
     @IBOutlet weak var myPickerView: UIPickerView!
     @IBOutlet weak var txtLoading: UILabel!
     
+    @IBOutlet weak var mySwitch: UISwitch!
+    
+    @IBOutlet weak var StackRoman: UIStackView!
+    @IBOutlet weak var txtFieldArabicNum: UITextField!
+    @IBOutlet weak var txtFieldRomanNum: UITextField!
+    
+    @IBOutlet weak var StackArabic: UIStackView!
+    @IBOutlet weak var lblToRoman: UILabel!
+    @IBOutlet weak var lblToArabic: UILabel!
+    
+  
+    @IBOutlet weak var btnConvertToRoman: UIButton!
+    
+    @IBOutlet weak var btnConvertToArabic: UIButton!
     
     var numbers = [1,5,10,50,100,500,1000]
     var roman = ["I","V","X","L","C","D","M"]
@@ -26,6 +40,7 @@ class ViewController:
         super.viewDidLoad()
         myPickerView.dataSource = self
         myPickerView.delegate = self
+        mySwitch.isOn = false
     }
     
     
@@ -61,28 +76,49 @@ class ViewController:
             let RomanNum = converter.toRoman(arabicNumber: selectedValue)
             txtLoading.text = RomanNum
             
-        }else {
+        } else {
             
             let ArabNum = converter.toArabic(romanNumber: selectedValue2)
             txtLoading.text = String(ArabNum)
         }
         
-        
-        
-       
-        
+    }
+    @IBAction func OnSwitch(_ sender: Any) {
+        if mySwitch.isOn {
+            StackRoman.isHidden = false
+            StackArabic.isHidden = false
+        } else{
+            StackRoman.isHidden = true
+            StackArabic.isHidden = true
+        }
 
-        
-        
     }
     
-
-   
+    @IBAction func OnRomanConvert(_ sender: UIButton) {
+        guard let arabicInput = txtFieldArabicNum.text, !arabicInput.isEmpty, let arabicValue = Int(arabicInput) else {
+            lblToRoman.text = "Invalid"
+            return
+        }
+        let romanNum = converter.toRoman(arabicNumber: arabicValue)
+        lblToRoman.text = romanNum
+    }
+    
+    @IBAction func OnArabicConvert(_ sender: UIButton) {
+        guard let romanInput = txtFieldRomanNum.text, !romanInput.isEmpty else{ lblToArabic.text = "Enter a valid Number"
+            return }
+        let arabicNum = converter.toArabic(romanNumber: romanInput)
+        if arabicNum == 0 {
+            lblToArabic.text = "Invalid"
+        }else{
+            lblToArabic.text = String(arabicNum)
+        }
+        
+        
+      
+    }
+    
     
    
-    
-    
-
-
 }
+
 
